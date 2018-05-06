@@ -65,7 +65,7 @@ sensor:
     scan_interval: 10800
     command: "ssl-cert-check -b -c /etc/letsencrypt/live/homeassistant-srokak.duckdns.org/cert.pem | awk '{ print $NF }'"
   - platform: wunderground
-    api_key: 09b63004618b9645
+    api_key: !secret wunderground_api_key
     monitored_conditions:
       - temp_high_1d_c
       - temp_c
@@ -98,7 +98,7 @@ mqtt:
   client_id: HomeAssistant
   keepalive: 60
   username: ha
-  password: klucze1526
+  password: !secret mqtt_password
 
 device_tracker:
   - platform: owntracks
@@ -107,21 +107,21 @@ device_tracker:
     waypoints: false
 
 zone 1:
-  name: w domu
+  name: dom
   latitude: 50.41660749999998
   longitude: 7.445949218750015
   radius: 000
   icon: mdi:home
   
 zone 2:
-  name: w pracy
+  name: praca
   latitude: 50.38520749999998
   longitude: 7.581464843750026
   radius: 300
   icon: mdi:briefcase
 
 zone 3:
-  name: u chinczyka
+  name: chinczyk
   latitude: 50.391476
   longitude: 7.586069
   radius: 100
@@ -129,7 +129,7 @@ zone 3:
 
 telegram_bot:
   - platform: polling
-    api_key: 563025673:AAHAz8jlcjbbHX16VsyoJdXpIkEXA8JLALM
+    api_key: !secret tlegram_api_key
     allowed_chat_ids:
       - 590872501
 
