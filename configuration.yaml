@@ -1,0 +1,139 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 50.41660749999998
+  longitude: 7.445949218750015
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 89.76
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Berlin
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+# introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  ssl_certificate: /etc/letsencrypt/live/homeassistant-srokak.duckdns.org/fullchain.pem
+  ssl_key: /etc/letsencrypt/live/homeassistant-srokak.duckdns.org/privkey.pem
+  base_url: homeassistant-srokak.duckdns.org
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Weather prediction
+sensor:
+  - platform: command_line
+    name: SSL ETA
+    unit_of_measurement: days
+    scan_interval: 10800
+    command: "ssl-cert-check -b -c /etc/letsencrypt/live/homeassistant-srokak.duckdns.org/cert.pem | awk '{ print $NF }'"
+  - platform: wunderground
+    api_key: 09b63004618b9645
+    monitored_conditions:
+      - temp_high_1d_c
+      - temp_c
+      - relative_humidity
+      - temp_low_1d_c
+      - precip_1d
+      - precip_1d_mm
+      - wind_kph
+      - wind_1d_kph
+      - alerts
+  - platform: time_date
+    display_options:
+        - 'time'
+        - 'date'
+
+# Text to speech
+tts:
+  - platform: google
+
+# Cloud
+cloud:
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+mqtt:
+  broker: m23.cloudmqtt.com
+  port: 13449
+  client_id: HomeAssistant
+  keepalive: 60
+  username: ha
+  password: klucze1526
+
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 200
+    mqtt_topic: "owntracks/#"
+    waypoints: false
+
+zone 1:
+  name: w domu
+  latitude: 50.41660749999998
+  longitude: 7.445949218750015
+  radius: 000
+  icon: mdi:home
+  
+zone 2:
+  name: w pracy
+  latitude: 50.38520749999998
+  longitude: 7.581464843750026
+  radius: 300
+  icon: mdi:briefcase
+
+zone 3:
+  name: u chinczyka
+  latitude: 50.391476
+  longitude: 7.586069
+  radius: 100
+  icon: mdi:food
+
+telegram_bot:
+  - platform: polling
+    api_key: 563025673:AAHAz8jlcjbbHX16VsyoJdXpIkEXA8JLALM
+    allowed_chat_ids:
+      - 590872501
+
+notify:
+  - name: telegram
+    platform: telegram
+    chat_id: 590872501

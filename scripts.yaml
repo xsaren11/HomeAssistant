@@ -1,0 +1,6 @@
+test_telegram:
+  alias: 'test_tlegram'
+  sequence:
+    service: notify.telegram
+    data:
+      message: "Home Assistant has started."

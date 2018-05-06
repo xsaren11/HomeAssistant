@@ -1,0 +1,10 @@
+# - alias: Notify Krzysiek at Home
+    # trigger:
+      # - platform: state
+        # entity_id: device_tracker.srokak_srokak
+        # from: 'not_Dom'
+        # to: 'Dom'
+    # action:
+      # service: notify.pushbullet
+      # data: 
+        # message: 'Krzysiek is at home.'
