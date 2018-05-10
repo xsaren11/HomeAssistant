@@ -1,3 +1,12 @@
+# default_view:
+    # view: yes
+    # icon: mdi:home
+    # entities:
+      # - group.weather_overview
+      # - group.time_and_date
+      # - group.family
+      # - group.fibaro_sensor
+
 weather_overview:
   name: Weather overview
   entities:
@@ -17,3 +26,42 @@ time_and_date:
   entities:
     - sensor.time
     - sensor.date
+
+family:
+  name: Family
+  entities:
+    - device_tracker.srokaa_srokaa
+    - device_tracker.srokak_srokak
+
+mapsK:
+  name: Krzysiek
+  entities:
+    - camera.krzysiek
+
+mapsA:
+  name: Agnieszka
+  entities:
+    - camera.agnieszka
+
+battery_level:
+  name: Battery Level
+  entities:
+    - sensor.xiaomi_redmi_note_4
+    - sensor.samsung_galaxy_s7
+    - sensor.motion_sensor
+
+fibaro_sensor:
+  name: Fibaro Sensor
+  entities:
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_burglar_4
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_general_4
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_4
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_4
+    - binary_sensor.sensor_4
+
+# network:
+  # name: Network
+  # view: yes
+  # icon: mdi:home
+  # entities:
+    # - group.battery_level

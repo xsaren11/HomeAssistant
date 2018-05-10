@@ -6,3 +6,11 @@ srokak_srokak:
   name: srokak
   picture:
   track: true
+
+srokaa_srokaa:
+  hide_if_away: false
+  icon:
+  mac:
+  name: srokaa
+  picture:
+  track: true

@@ -1,3 +1,10 @@
 *.uuid
 *.log
 *.db
+/entity_registry.yaml
+/options.xml
+/OZW_Log.txt
+/pyozw.sqlite
+/secrets — kopia.yaml
+/zwcfg_0xc7bc7ddb.xml
+/zwscene.xml

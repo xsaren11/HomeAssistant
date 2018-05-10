@@ -5,8 +5,27 @@ device_tracker.srokak_srokak:
   entity_picture: https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/25289457_10214870041215328_7442720687493618075_n.jpg?_nc_cat=0&oh=f010eea93e6e21db2c073d7968cc5909&oe=5B8B42F0
   track: true
 
+device_tracker.srokaa_srokaa:
+  friendly_name: Agnieszka
+  hide_if_away: true
+  name: srokak
+  entity_picture: https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-0/p370x247/14720451_316197852092198_6548496335965731978_n.jpg?_nc_cat=0&oh=d7921e688e7255976d1c7d5aa5bd12a7&oe=5B9A4016
+  track: true
+  
 sensor.ssl_eta:
   hidden: true
-  
-# zone.home:
-  # friendly_name: w domu
+
+sensor.fibaro_system_fgms001zw5_motion_sensor_temperature_4:
+  friendly_name: Temp. Sypialnia
+  unit_of_measurement: °C
+
+sensor.fibaro_system_fgms001zw5_motion_sensor_luminance_4:
+  friendly_name: Natezenie Swiatla Sypialnia
+  unit_of_measurement: lux
+
+binary_sensor.sensor_4:
+  friendly_name: Motion Sensor
+  device_class: motion
+
+sensor.motion_sensor:
+  device_class: battery
