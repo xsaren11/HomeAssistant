@@ -1,0 +1,35 @@
+esphome:
+  name: bluetooth_hub_sypialnia
+  platform: ESP32
+  board: wemosbat
+
+wifi:
+  ssid: "FRITZ!Box_7430_MX"
+  password: "grzesieks15261526"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  # ap:
+  #   ssid: "Bluetooth Hub Fallback Hotspot"
+  #   password: "H6R9hdN82amx"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+esp32_ble_tracker:
+  
+sensor:
+  - platform: xiaomi_lywsdcgq
+    mac_address: 58:2D:34:39:2F:B2
+    temperature:
+      name: "Bedroom Sensor Temperature"
+    humidity:
+      name: "Bedroom Sensor Humidity"
+    battery_level:
+      name: "Bedroom Sensor Battery Level"

@@ -1,0 +1,45 @@
+# - platform: mqtt
+  # name: "Fan switch"
+  # state_topic: "stat/fan/RESULT"
+  # value_template: "{{ value_json.POWER }}"
+  # command_topic: "cmnd/fan/POWER"
+  # availability_topic: "tele/fan/LWT"
+  # qos: 0
+  # payload_on: "ON"
+  # payload_off: "OFF"
+  # payload_available: "Online"
+  # payload_not_available: "Offline"
+  # retain: false
+
+- platform: template
+  switches:
+    # delonghi_aircon:
+      # value_template: '{{ states("input_boolean.delonghi_aircon") }}'
+      # turn_on:
+        # - service: input_boolean.turn_on
+          # entity_id: input_boolean.delonghi_aircon
+        # - service: climate.turn_on
+          # entity_id: climate.kuchnia
+      # turn_off:
+        # - service: input_boolean.turn_off
+          # entity_id: input_boolean.delonghi_aircon
+        # - service: climate.turn_off
+          # entity_id: climate.kuchnia
+
+    pralka:
+      value_template: '{{ states("input_boolean.pralka") }}'
+      turn_on:
+        - service: input_boolean.turn_on
+          entity_id: input_boolean.pralka
+      turn_off:
+        - service: input_boolean.turn_off
+          entity_id: input_boolean.pralka
+
+    suszarka:
+      value_template: '{{ states("input_boolean.suszarka") }}'
+      turn_on:
+        - service: input_boolean.turn_on
+          entity_id: input_boolean.suszarka
+      turn_off:
+        - service: input_boolean.turn_off
+          entity_id: input_boolean.suszarka

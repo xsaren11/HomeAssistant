@@ -1,0 +1,42 @@
+esphome:
+  name: delonghi
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: "FRITZ!Box_7430_MX"
+  password: "grzesieks15261526"
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: "klucze1526"
+
+ota:
+  password: "klucze1526"
+
+remote_transmitter:
+  pin: 4
+  carrier_duty_percent: 50%
+
+switch:
+  - platform: template
+    name: "Air Condition"
+    optimistic: true
+    restore_state: true
+    turn_on_action:
+      - remote_transmitter.transmit_raw:
+          repeat:
+            times: 3
+            wait_time: 100ms
+          carrier_frequency: 38kHz
+          code: [9034, -4491, 489, -1741, 534, -1649, 546, -572, 561, -1622, 466, -626, 580, -537, 539, -1643, 518, -600, 530, -561, 555, -1629, 554, -1653, 522, -570, 517, -601, 530, -561, 531, -1652, 541, -1665, 530, -1679, 529, -565, 528, -562, 522, -570, 518, -601, 530, -560, 554, -538, 465, -626, 549, -568, 529, -563, 520, -572, 466, -625, 554, -1655, 519, -571, 551, -567, 529, -563, 528, -563, 466, -1741, 530, -1654, 518, -1692, 530, -1652, 553, -565, 529, -562, 521, -569, 517]
+    turn_off_action:
+      - remote_transmitter.transmit_raw:
+          repeat:
+            times: 3
+            wait_time: 100ms
+          carrier_frequency: 38kHz
+          code: [9035, -4490, 539, -1692, 531, -1651, 549, -571, 527, -1654, 516, -603, 524, -567, 525, -1656, 549, -570, 526, -565, 527, -1680, 529, -1655, 521, -574, 514, -600, 528, -564, 528, -1679, 526, -1656, 523, -568, 546, -573, 525, -566, 526, -565, 466, -626, 551, -566, 528, -564, 544, -547, 514, -604, 525, -566, 551, -540, 466, -625, 574, -1634, 548, -544, 515, -607, 523, -565, 526, -565, 521, -1685, 527, -1657, 488, -1719, 530, -1654, 544, -575, 526, -565, 525, -566, 466]

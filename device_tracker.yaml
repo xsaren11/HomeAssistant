@@ -1,0 +1,6 @@
+- platform: fritz
+  host: 192.168.178.1
+  interval_seconds: 10
+  consider_home: 180
+  new_device_defaults:
+    track_new_devices: false

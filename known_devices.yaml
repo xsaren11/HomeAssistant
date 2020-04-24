@@ -1,16 +1,448 @@
-
-srokak_srokak:
+redminote4_agutek:
   hide_if_away: false
   icon:
-  mac:
-  name: srokak
+  mac: 38:E6:0A:73:26:BF
+  name: RedmiNote4-Agutek
   picture:
   track: true
 
-srokaa_srokaa:
+samsung_galaxy_s7:
   hide_if_away: false
   icon:
-  mac:
-  name: srokaa
+  mac: A0:C9:A0:C3:D5:91
+  name: Samsung-Galaxy-S7
   picture:
   track: true
+
+user_komputer_user:
+  hide_if_away: false
+  icon:
+  mac: 60:D8:19:C4:DC:B9
+  name: USER-KOMPUTER--user
+  picture:
+  track: false
+
+esp_bedroom:
+  hide_if_away: false
+  icon:
+  mac: 84:F3:EB:53:52:2B
+  name: esp-bedroom
+  picture:
+  track: false
+
+esp_fan:
+  hide_if_away: false
+  icon:
+  mac: C4:4F:33:88:AE:DA
+  name: esp-fan
+  picture:
+  track: false
+
+fritz_box:
+  hide_if_away: false
+  icon:
+  mac: E0:28:6D:E0:05:C7
+  name: fritz.box
+  picture:
+  track: false
+
+hassio:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:C7:AC:85
+  name: hassio
+  picture:
+  track: false
+
+
+agutek:
+  hide_if_away: false
+  icon:
+  mac: BT_38:E6:0A:33:26:C0
+  name: Agutek
+  picture:
+  track: false
+
+user_komputer:
+  hide_if_away: false
+  icon:
+  mac: BT_E4:D5:3D:D5:97:58
+  name: USER-KOMPUTER
+  picture:
+  track: false
+
+sonoff_5331:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:37:B4:D3
+  name: sonoff-5331
+  picture:
+  track: false
+
+goscinny:
+  hide_if_away: false
+  icon:
+  mac: 3C:71:BF:AA:BB:E4
+  name: goscinny
+  picture:
+  track: false
+
+samsung_galaxy_s7_2:
+  hide_if_away: false
+  icon:
+  mac: BT_E0:AA:96:63:20:83
+  name: Samsung Galaxy S7
+  picture:
+  track: false
+
+hassio_2:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:92:F9:D0
+  name: hassio
+  picture:
+  track: false
+
+delonghi:
+  hide_if_away: false
+  icon:
+  mac: 80:7D:3A:10:0D:BD
+  name: delonghi
+  picture:
+  track: false
+
+lazienka:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:37:B2:14
+  name: lazienka
+  picture:
+  track: false
+
+huawei_mate_20_lite:
+  hide_if_away: false
+  icon:
+  mac: BT_A8:7D:12:62:7F:8E
+  name: HUAWEI Mate 20 lite
+  picture:
+  track: false
+
+sypialnia:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:37:B1:7F
+  name: sypialnia
+  picture:
+  track: false
+
+clemens_75:
+  hide_if_away: false
+  icon:
+  mac: BT_04:D1:3A:D1:D2:0D
+  name: clemens  75
+  picture:
+  track: false
+
+dell_dell_venue_8pro:
+  hide_if_away: false
+  icon:
+  mac: 88:12:4E:04:0D:B4
+  name: DELL--Dell-Venue-8Pro
+  picture:
+  track: false
+
+user_komputer_2:
+  hide_if_away: false
+  icon:
+  mac: 3C:97:0E:82:61:E4
+  name: user-Komputer
+  picture:
+  track: false
+
+camera:
+  hide_if_away: false
+  icon:
+  mac: A4:CF:12:05:54:08
+  name: camera
+  picture:
+  track: false
+
+honor_8a:
+  hide_if_away: false
+  icon:
+  mac: BT_DC:16:B2:68:75:64
+  name: Honor 8A
+  picture:
+  track: false
+
+redmi:
+  hide_if_away: false
+  icon:
+  mac: BT_E0:62:67:29:E7:52
+  name: Redmi
+  picture:
+  track: false
+
+fritz_box_2:
+  hide_if_away: false
+  icon:
+  mac: 98:9B:CB:C0:20:99
+  name: fritz.box
+  picture:
+  track: false
+
+kuchnia:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:19:EB:D0
+  name: kuchnia
+  picture:
+  track: false
+
+beyondtv:
+  hide_if_away: false
+  icon:
+  mac: BT_44:D8:78:15:D5:F7
+  name: BeyondTV
+  picture:
+  track: false
+
+elvira:
+  hide_if_away: false
+  icon:
+  mac: BT_C8:3D:DC:8A:C2:91
+  name: Эльвира
+  picture:
+  track: false
+
+bv5500:
+  hide_if_away: false
+  icon:
+  mac: BT_CC:73:14:31:A3:AB
+  name: BV5500
+  picture:
+  track: false
+
+danielle_mietzy_galaxy_s5:
+  hide_if_away: false
+  icon:
+  mac: BT_64:B8:53:56:4D:44
+  name: Danielle Mietzy (Galaxy S5)
+  picture:
+  track: false
+
+tcl_ts7010:
+  hide_if_away: false
+  icon:
+  mac: BT_70:10:01:29:F1:AB
+  name: TCL TS7010
+  picture:
+  track: false
+
+admingrothe_hp:
+  hide_if_away: false
+  icon:
+  mac: BT_B8:81:98:35:61:95
+  name: ADMINGROTHE-HP
+  picture:
+  track: false
+
+nicole:
+  hide_if_away: false
+  icon:
+  mac: BT_D0:65:CA:D4:74:AA
+  name: Nicole
+  picture:
+  track: false
+
+mi_phone:
+  hide_if_away: false
+  icon:
+  mac: BT_70:BB:E9:F4:48:08
+  name: Mi Phone
+  picture:
+  track: false
+
+desktop_84erlrn:
+  hide_if_away: false
+  icon:
+  mac: 00:D8:61:C5:C9:A0
+  name: DESKTOP-84ERLRN
+  picture:
+  track: false
+
+h800_logitech_headset:
+  hide_if_away: false
+  icon:
+  mac: BT_00:0D:44:30:C0:0F
+  name: H800 Logitech Headset
+  picture:
+  track: false
+
+huawei_mate_20:
+  hide_if_away: false
+  icon:
+  mac: BT_D0:D7:83:D6:7A:A1
+  name: HUAWEI Mate 20
+  picture:
+  track: false
+
+garmin_drivesmart_3312203874:
+  hide_if_away: false
+  icon:
+  mac: BT_F0:99:19:63:71:66
+  name: 'Garmin DriveSmart #3312203874'
+  picture:
+  track: false
+
+redmi_2:
+  hide_if_away: false
+  icon:
+  mac: BT_7C:03:AB:D3:E0:1F
+  name: Redmi
+  picture:
+  track: false
+
+bluetooth_hub_sypialnia:
+  hide_if_away: false
+  icon:
+  mac: 3C:71:BF:9E:1F:BC
+  name: bluetooth-hub-sypialnia
+  picture:
+  track: false
+
+cubot_max:
+  hide_if_away: false
+  icon:
+  mac: BT_7C:B9:60:2A:62:7F
+  name: CUBOT MAX
+  picture:
+  track: false
+
+redmi_3:
+  hide_if_away: false
+  icon:
+  mac: BT_F4:60:E2:92:C8:17
+  name: Redmi
+  picture:
+  track: false
+
+julia_honor_6x:
+  hide_if_away: false
+  icon:
+  mac: BT_50:01:D9:F6:F2:BC
+  name: julia Honor 6X
+  picture:
+  track: false
+
+galaxy_s5:
+  hide_if_away: false
+  icon:
+  mac: BT_B0:C5:59:4A:B8:1A
+  name: Galaxy S5
+  picture:
+  track: false
+
+huawei_p20:
+  hide_if_away: false
+  icon:
+  mac: BT_24:2E:02:87:B7:CB
+  name: Huawei p20
+  picture:
+  track: false
+
+serdgo:
+  hide_if_away: false
+  icon:
+  mac: BT_A4:9B:4F:06:10:66
+  name: Serdgo
+  picture:
+  track: false
+
+huawei_p_smart_2019:
+  hide_if_away: false
+  icon:
+  mac: BT_F4:BF:80:FC:44:87
+  name: HUAWEI P smart 2019
+  picture:
+  track: false
+
+kobc63703:
+  hide_if_away: false
+  icon:
+  mac: D4:3B:04:C4:B8:1E
+  name: KOBC63703
+  picture:
+  track: false
+
+huawei_p_smart_2019_2:
+  hide_if_away: false
+  icon:
+  mac: BT_D8:9E:61:28:5A:34
+  name: HUAWEI P smart 2019
+  picture:
+  track: false
+
+c3530:
+  hide_if_away: false
+  icon:
+  mac: BT_18:46:17:B7:1F:9E
+  name: C3530
+  picture:
+  track: false
+
+huawei_mate_20_lite_2:
+  icon:
+  mac: BT_C0:F4:E6:71:E1:90
+  name: HUAWEI Mate 20 lite
+  picture:
+  track: false
+
+huawei_p_smart_z:
+  icon:
+  mac: BT_F0:E4:A2:BA:C3:78
+  name: HUAWEI P smart Z
+  picture:
+  track: false
+
+kobc63703_2:
+  icon:
+  mac: E8:6A:64:F7:14:98
+  name: KOBC63703
+  picture:
+  track: false
+
+huawei_mate_10_lite:
+  icon:
+  mac: BT_38:37:8B:95:04:CC
+  name: HUAWEI Mate 10 lite
+  picture:
+  track: false
+
+huawei_p_smart_2019_3:
+  icon:
+  mac: BT_A0:D8:07:63:48:61
+  name: HUAWEI P smart 2019
+  picture:
+  track: false
+
+huawei_p_smart_2019_4:
+  icon:
+  mac: BT_C4:06:83:30:51:A7
+  name: HUAWEI P smart 2019
+  picture:
+  track: false
+
+magic_mitin:
+  icon:
+  mac: BT_A4:50:46:96:89:E6
+  name: Magic Mitin
+  picture:
+  track: false
+
+anita:
+  icon:
+  mac: BT_BC:B1:F3:94:DF:EE
+  name: Anita
+  picture:
+  track: false

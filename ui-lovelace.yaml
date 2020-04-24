@@ -1,0 +1,853 @@
+resources:
+  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+    type: module
+  - url: https://cdn.jsdelivr.net/gh/bramkragten/custom-ui@master/weather-card/weather-card.min.js
+    type: module
+  - url: /customcards/github/custom-cards/tracker-card.js?track=true
+    type: module
+  - url: /local/custom-lovelace/mini-media-player/mini-media-player-bundle.js?v=1.2.2
+    type: module
+  - url: /local/custom-lovelace/simple-thermostat/simple-thermostat.js?v=1
+    type: module
+title: Home
+views:
+  - title: Main
+    background: var(--background-image)
+    icon: mdi:home-outline
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: picture-elements
+            image: https://scontent-frx5-1.xx.fbcdn.net/v/t31.0-8/p960x960/14691896_316197852092198_6548496335965731978_o.jpg?_nc_cat=105&_nc_sid=85a577&_nc_ohc=11ml-oo11SoAX_nN0lR&_nc_ht=scontent-frx5-1.xx&_nc_tp=6&oh=b389795a5e0b5c0669b65fd6adf21fc7&oe=5EBCBEDF
+            entity: person.aga
+            elements:
+              - type: state-label
+                entity: input_text.aga
+                style:
+                  left: 0
+                  bottom: 0
+                  pointer-events: none
+                  font-size: 16px
+                  line-height: 32px
+                  color: white
+                  background-color: rgba(0, 0, 0, 0.3)
+                  width: 100%
+                  transform: initial
+                  padding: 0 7px
+              - type: state-label
+                entity: person.aga
+                style:
+                  bottom: 0
+                  right: 0
+                  transform: initial
+                  color: white
+                  font-size: 16px
+                  line-height: 32px
+                  padding: 0 7px
+                  margin: 0 8px 0 0
+              - type: state-label
+                entity: sensor.redmi_note_4_battery_level
+                style:
+                  top: 0
+                  right: 0
+                  transform: initial
+                  font-size: 12px
+                  color: rgba(255,255,255,1)
+                  text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+                  line-height: 32px
+                  margin: 0px 22px
+              - type: state-icon
+                entity: sensor.redmi_note_4_battery_level
+                style:
+                  top: 0
+                  right: 0
+                  transform: scale(0.8)
+                  color: rgba(255,255,255,1)
+                  line-height: 32px
+                  margin: 2px 0px 0 0
+                  # Change color of state-icon off
+                  --paper-item-icon-color: rgb(255,255,255)
+          - type: picture-elements
+            image: https://scontent-frx5-1.xx.fbcdn.net/v/t31.0-8/p960x960/24958741_10214870050735566_8235288982409908062_o.jpg?_nc_cat=110&_nc_sid=85a577&_nc_ohc=1SeV1Y0YhpwAX-4cRwF&_nc_ht=scontent-frx5-1.xx&_nc_tp=6&oh=8ba55c86180d8f5e20242141ae34997b&oe=5EC95A67
+            entity: person.krzysiek
+            elements:
+              - type: state-label
+                entity: input_text.krzysiek
+                style:
+                  left: 0
+                  bottom: 0
+                  pointer-events: none
+                  font-size: 16px
+                  line-height: 32px
+                  color: white
+                  background-color: rgba(0, 0, 0, 0.3)
+                  width: 100%
+                  transform: initial
+                  padding: 0 7px
+              - type: state-label
+                entity: person.krzysiek
+                style:
+                  bottom: 0
+                  right: 0
+                  transform: initial
+                  color: white
+                  font-size: 16px
+                  line-height: 32px
+                  padding: 0 7px
+                  margin: 0 8px 0 0
+              - type: state-label
+                entity: sensor.sm_g930f_battery_level
+                style:
+                  top: 0
+                  right: 0
+                  transform: initial
+                  font-size: 12px
+                  color: rgba(255,255,255,1)
+                  text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+                  line-height: 32px
+                  margin: 0px 22px
+              - type: state-icon
+                entity: sensor.sm_g930f_battery_level
+                style:
+                  top: 0
+                  right: 0
+                  transform: scale(0.8)
+                  color: rgba(255,255,255,1)
+                  line-height: 32px
+                  margin: 2px 0px
+                  # Change color of state-icon off
+                  --paper-item-icon-color: rgb(255,255,255)
+      - type: alarm-panel
+        entity: alarm_control_panel.home_alarm
+      - type: custom:weather-card
+        entity: weather.dom
+      - type: entities
+        show_header_toggle: false
+        title: Informacje
+        entities:
+          - sensor.eur
+          - sensor.to_work
+          - sensor.to_home
+      - type: picture-elements
+        image: /local/kuchnia.jpg
+        elements:
+          - type: state-icon
+            icon: mdi:snowflake
+            tap_action:
+              action: toggle
+            entity: switch.delonghi_aircon
+            style:
+              bottom: 0
+              left: 0
+              line-height: 45px
+              color: white
+              background-color: rgba(0, 0, 0, 0.3)
+              width: 100%
+              transform: initial
+              padding: 0 7px
+              --paper-item-icon-color: rgb(255,255,255)
+          - type: state-label
+            entity: sensor.kitchen_bme280_temperature
+            style:
+              bottom: -17px
+              right: 0
+              font-size: 12px
+              color: rgba(255,255,255,1)
+              text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              line-height: 32px
+              margin: -19px 106px
+          - type: icon
+            icon: mdi:thermometer
+            entity: sensor.kitchen_bme280_temperature
+            style:
+              bottom: 7px
+              right: 0
+              transform: scale(0.8)
+              color: white
+              line-height: 32px
+              padding: 8px
+              margin: 0 142px 0 0
+          - type: state-label
+            entity: sensor.kitchen_bme280_humidity
+            style:
+              bottom: -17px
+              right: 0
+              font-size: 12px
+              color: rgba(255,255,255,1)
+              text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              line-height: 32px
+              margin: -19px 56px
+          - type: icon
+            icon: mdi:weather-rainy
+            entity: sensor.kitchen_bme280_humidity
+            style:
+              bottom: 7px
+              right: 0
+              transform: scale(0.8)
+              color: white
+              line-height: 32px
+              padding: 8px
+              margin: 0 90px 0 0
+          - type: state-label
+            entity: sensor.kitchen_bme280_pressure
+            style:
+              bottom: -17px
+              right: 0
+              font-size: 12px
+              color: rgba(255,255,255,1)
+              text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              line-height: 32px
+              margin: -19px -30px
+          - type: icon
+            icon: mdi:gauge
+            entity: sensor.kitchen_bme280_pressure
+            style:
+              bottom: 7px
+              right: 0
+              transform: scale(0.8)
+              color: white
+              line-height: 32px
+              padding: 8px
+              margin: 0 28px 0 0
+      - type: picture-elements
+        image: /local/salon.jpg
+        elements:
+          - type: state-icon
+            icon: mdi:lightbulb
+            tap_action:
+              action: toggle
+            entity: switch.shenzhen_neo_electronics_co_ltd_wall_switch_1_channel_switch_3
+            style:
+              bottom: 0
+              left: 0
+              line-height: 45px
+              color: white
+              background-color: rgba(0, 0, 0, 0.3)
+              width: 100%
+              transform: initial
+              padding: 0 7px
+              --paper-item-icon-color: rgb(255,255,255)
+          - type: state-label
+            entity: sensor.living_room_sensor_temperature
+            style:
+              bottom: -17px
+              right: 0
+              font-size: 12px
+              color: rgba(255,255,255,1)
+              text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              line-height: 32px
+              margin: -19px 29px
+          - type: icon
+            icon: mdi:thermometer
+            entity: sensor.living_room_sensor_temperature
+            style:
+              bottom: 7px
+              right: 0
+              transform: scale(0.8)
+              color: white
+              line-height: 32px
+              padding: 8px
+              margin: 0 65px 0 0
+          - type: state-label
+            entity: sensor.living_room_sensor_humidity
+            style:
+              bottom: -17px
+              right: 0
+              font-size: 12px
+              color: rgba(255,255,255,1)
+              text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              line-height: 32px
+              margin: -19px -20px
+          - type: icon
+            icon: mdi:weather-rainy
+            entity: sensor.living_room_sensor_humidity
+            style:
+              bottom: 7px
+              right: 0
+              transform: scale(0.8)
+              color: white
+              line-height: 32px
+              padding: 8px
+              margin: 0 15px 0 0
+          # - type: state-label
+            # entity: sensor.living_room_sensor_temperature
+            # style:
+              # bottom: -17px
+              # right: 0
+              # font-size: 12px
+              # color: rgba(255,255,255,1)
+              # text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              # line-height: 32px
+              # margin: -19px 106px
+          # - type: icon
+            # icon: mdi:thermometer
+            # entity: sensor.living_room_sensor_temperature
+            # style:
+              # bottom: 7px
+              # right: 0
+              # transform: scale(0.8)
+              # color: white
+              # line-height: 32px
+              # padding: 8px
+              # margin: 0 142px 0 0
+          # - type: state-label
+            # entity: sensor.living_room_sensor_humidity
+            # style:
+              # bottom: -17px
+              # right: 0
+              # font-size: 12px
+              # color: rgba(255,255,255,1)
+              # text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              # line-height: 32px
+              # margin: -19px 56px
+          # - type: icon
+            # icon: mdi:weather-rainy
+            # entity: sensor.living_room_sensor_humidity
+            # style:
+              # bottom: 7px
+              # right: 0
+              # transform: scale(0.8)
+              # color: white
+              # line-height: 32px
+              # padding: 8px
+              # margin: 0 90px 0 0
+          # - type: state-label
+            # entity: sensor.livin_room_bme280_pressure
+            # style:
+              # bottom: -17px
+              # right: 0
+              # font-size: 12px
+              # color: rgba(255,255,255,1)
+              # text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              # line-height: 32px
+              # margin: -19px -30px
+          # - type: icon
+            # icon: mdi:gauge
+            # entity: sensor.livin_room_bme280_pressure
+            # style:
+              # bottom: 7px
+              # right: 0
+              # transform: scale(0.8)
+              # color: white
+              # line-height: 32px
+              # padding: 8px
+              # margin: 0 28px 0 0
+      - type: picture-elements
+        image: /local/sypialnia.jpg
+        elements:
+          - type: state-icon
+            icon: mdi:lightbulb
+            tap_action:
+              action: toggle
+            entity: switch.shenzhen_neo_electronics_co_ltd_wall_switch_1_channel_switch
+            style:
+              bottom: 0
+              left: 0
+              line-height: 45px
+              color: white
+              background-color: rgba(0, 0, 0, 0.3)
+              width: 100%
+              transform: initial
+              padding: 0 7px
+              --paper-item-icon-color: rgb(255,255,255)
+          - type: state-label
+            entity: sensor.bedroom_sensor_temperature
+            style:
+              bottom: -17px
+              right: 0
+              font-size: 12px
+              color: rgba(255,255,255,1)
+              text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              line-height: 32px
+              margin: -19px 29px
+          - type: icon
+            icon: mdi:thermometer
+            entity: sensor.bedroom_sensor_temperature
+            style:
+              bottom: 7px
+              right: 0
+              transform: scale(0.8)
+              color: white
+              line-height: 32px
+              padding: 8px
+              margin: 0 65px 0 0
+          - type: state-label
+            entity: sensor.bedroom_sensor_humidity
+            style:
+              bottom: -17px
+              right: 0
+              font-size: 12px
+              color: rgba(255,255,255,1)
+              text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              line-height: 32px
+              margin: -19px -20px
+          - type: icon
+            icon: mdi:weather-rainy
+            entity: sensor.bedroom_sensor_humidity
+            style:
+              bottom: 7px
+              right: 0
+              transform: scale(0.8)
+              color: white
+              line-height: 32px
+              padding: 8px
+              margin: 0 15px 0 0
+          # - type: state-label
+            # entity: sensor.bedroom_bme280_pressure
+            # style:
+              # bottom: -17px
+              # right: 0
+              # font-size: 12px
+              # color: rgba(255,255,255,1)
+              # text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              # line-height: 32px
+              # margin: -19px -30px
+          # - type: icon
+            # icon: mdi:gauge
+            # entity: sensor.bedroom_bme280_pressure
+            # style:
+              # bottom: 7px
+              # right: 0
+              # transform: scale(0.8)
+              # color: white
+              # line-height: 32px
+              # padding: 8px
+              # margin: 0 28px 0 0
+      - type: picture-elements
+        image: /local/lazienka.jpg
+        elements:
+          - type: state-icon
+            icon: mdi:washing-machine
+            pointer-events: none
+            entity: switch.pralka
+            style:
+              bottom: 0
+              left: 0
+              line-height: 45px
+              color: white
+              transform: initial
+              padding: 0 38px
+              --paper-item-icon-color: rgb(255,255,255)
+          - type: state-icon
+            icon: mdi:washing-machine
+            pointer-events: none
+            entity: switch.suszarka
+            style:
+              bottom: 0
+              left: 0
+              line-height: 45px
+              color: white
+              transform: initial
+              padding: 0 69px
+              --paper-item-icon-color: rgb(255,255,255)
+          - type: state-icon
+            icon: mdi:lightbulb
+            tap_action:
+              action: toggle
+            entity: switch.shenzhen_neo_electronics_co_ltd_wall_switch_1_channel_switch_4
+            style:
+              bottom: 0
+              left: 0
+              line-height: 45px
+              color: white
+              background-color: rgba(0, 0, 0, 0.3)
+              width: 100%
+              transform: initial
+              padding: 0 7px
+              --paper-item-icon-color: rgb(255,255,255)
+          - type: state-label
+            entity: sensor.bathroom_bme280_temperature
+            style:
+              bottom: -17px
+              right: 0
+              font-size: 12px
+              color: rgba(255,255,255,1)
+              text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              line-height: 32px
+              margin: -19px 106px
+          - type: icon
+            icon: mdi:thermometer
+            entity: sensor.bathroom_bme280_temperature
+            style:
+              bottom: 7px
+              right: 0
+              transform: scale(0.8)
+              color: white
+              line-height: 32px
+              padding: 8px
+              margin: 0 142px 0 0
+          - type: state-label
+            entity: sensor.bathroom_bme280_humidity
+            style:
+              bottom: -17px
+              right: 0
+              font-size: 12px
+              color: rgba(255,255,255,1)
+              text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              line-height: 32px
+              margin: -19px 56px
+          - type: icon
+            icon: mdi:weather-rainy
+            entity: sensor.bathroom_bme280_humidity
+            style:
+              bottom: 7px
+              right: 0
+              transform: scale(0.8)
+              color: white
+              line-height: 32px
+              padding: 8px
+              margin: 0 90px 0 0
+          - type: state-label
+            entity: sensor.bathroom_bme280_pressure
+            style:
+              bottom: -17px
+              right: 0
+              font-size: 12px
+              color: rgba(255,255,255,1)
+              text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              line-height: 32px
+              margin: -19px -30px
+          - type: icon
+            icon: mdi:gauge
+            entity: sensor.bathroom_bme280_pressure
+            style:
+              bottom: 7px
+              right: 0
+              transform: scale(0.8)
+              color: white
+              line-height: 32px
+              padding: 8px
+              margin: 0 28px 0 0
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: entity-button
+                entity: switch.shenzhen_neo_electronics_co_ltd_wall_switch_1_channel_switch
+                name: SYPIALNIA
+                icon: mdi:lightbulb-on-outline
+                tap_action:
+                  action: toggle
+              - type: entity-button
+                entity: switch.shenzhen_neo_electronics_co_ltd_wall_switch_1_channel_switch_3
+                name: GOŚCINNY
+                icon: mdi:lightbulb-on-outline
+                tap_action:
+                  action: toggle
+          - type: horizontal-stack
+            cards:
+              - type: entity-button
+                entity: switch.shenzhen_neo_electronics_co_ltd_wall_switch_1_channel_switch_4
+                name: ŁAZIENKA
+                icon: mdi:lightbulb-on-outline
+                tap_action:
+                  action: toggle
+              - type: entity-button
+                entity: switch.shenzhen_neo_electronics_co_ltd_wall_switch_1_channel_switch_2
+                name: PRZEDPOKÓJ
+                icon: mdi:lightbulb-on-outline
+                tap_action:
+                  action: toggle
+      - type: custom:mini-graph-card
+        entities:
+          - entity: sensor.kitchen_bme280_temperature
+            name: Kuchnia
+          - entity: sensor.bedroom_sensor_temperature
+            name: Sypialnia
+          - entity: sensor.living_room_sensor_temperature
+            name: Gościnny
+          - entity: sensor.bathroom_bme280_temperature
+            name: Łazienka
+          - entity: sensor.fibaro_system_fgms001_zw5_motion_sensor_temperature
+            name: Przedpokój
+  - title: Kuchnia
+    background: var(--background-image)
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: 'custom:simple-thermostat'
+            entity: climate.kuchnia
+            sensors:
+              - entity: sensor.kitchen_bme280_humidity
+                name: Wilgotność
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.kitchen_bme280_temperature
+            name: Temperatura
+            points_per_hour: 2
+            show:
+              labels: true
+            color_thresholds:
+              - value: 21
+                color: "#12bbf3"
+              - value: 23
+                color: "#00d304"
+              - value: 25
+                color: "#c0392b"
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                entities:
+                  - sensor.kitchen_bme280_humidity
+                name: Wilgotność
+                icon: mdi:weather-rainy
+                show:
+                  labels: true
+                line_color: blue
+                line_width: 8
+                font_size: 75
+                color_thresholds:
+                  - value: 35
+                    color: "#c0392b"
+                  - value: 50
+                    color: "#00d304"
+                  - value: 65
+                    color: "#c0392b"
+              - type: custom:mini-graph-card
+                entities:
+                  - sensor.kitchen_bme280_pressure
+                name: Ćiśnienie
+                icon: mdi:gauge
+                show:
+                  labels: true
+                line_color: orange
+                line_width: 8
+                font_size: 75
+          - type: entity-button
+            entity: switch.fan_switch
+            name: WIATRAK
+            icon: mdi:fan
+            tap_action:
+              action: toggle
+  - title: Sypialnia
+    background: var(--background-image)
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: 'custom:simple-thermostat'
+            entity: climate.danfoss_devolo_home_control_radiator_thermostat_heating_1
+            sensors:
+              - entity: sensor.bedroom_sensor_temperature
+                name: Termostat
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.bedroom_sensor_temperature
+            name: Temperatura
+            points_per_hour: 2
+            show:
+              labels: true
+            color_thresholds:
+              - value: 21
+                color: "#12bbf3"
+              - value: 23
+                color: "#00d304"
+              - value: 25
+                color: "#c0392b"
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.bedroom_sensor_humidity
+            name: Wilgotność
+            points_per_hour: 2
+            icon: mdi:weather-rainy
+            show:
+              labels: true
+            line_color: blue
+            color_thresholds:
+              - value: 35
+                color: "#c0392b"
+              - value: 50
+                color: "#00d304"
+              - value: 65
+                color: "#c0392b"
+          - type: entity-button
+            entity: switch.shenzhen_neo_electronics_co_ltd_wall_switch_1_channel_switch
+            name: SYPIALNIA
+            icon: mdi:lightbulb-on-outline
+            tap_action:
+              action: toggle
+  - title: Gościnny
+    background: var(--background-image)
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.living_room_sensor_temperature
+            name: Temperatura
+            points_per_hour: 2
+            show:
+              labels: true
+            color_thresholds:
+              - value: 21
+                color: "#12bbf3"
+              - value: 23
+                color: "#00d304"
+              - value: 25
+                color: "#c0392b"
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.living_room_sensor_humidity
+            name: Wilgotność
+            points_per_hour: 2
+            icon: mdi:weather-rainy
+            show:
+              labels: true
+            line_color: blue
+            color_thresholds:
+              - value: 35
+                color: "#c0392b"
+              - value: 50
+                color: "#00d304"
+              - value: 65
+                color: "#c0392b"
+          - type: picture-elements
+            image: /local/plants.jpg
+            elements:
+              - type: state-label
+                entity: sensor.xiaomi_miflora_moisture
+                style:
+                  top: 27%
+                  left: 11%
+                  font-size: 12px
+                  color: rgba(255,255,255,1)
+                  text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              - type: icon
+                icon: mdi:weather-rainy
+                entity: sensor.xiaomi_miflora_moisture
+                style:
+                  top: 15%
+                  left: 10%
+                  color: white
+              - type: state-label
+                entity: sensor.xiaomi_miflora_soil_conductivity
+                style:
+                  top: 27%
+                  left: 24%
+                  font-size: 12px
+                  color: rgba(255,255,255,1)
+                  text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              - type: icon
+                icon: mdi:emoticon-poop
+                entity: sensor.xiaomi_miflora_soil_conductivity
+                style:
+                  top: 15%
+                  left: 23%
+                  color: white
+              - type: state-label
+                entity: sensor.xiaomi_miflora_illuminance
+                style:
+                  top: 27%
+                  left: 39%
+                  font-size: 12px
+                  color: rgba(255,255,255,1)
+                  text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 2px
+              - type: icon
+                icon: mdi:white-balance-sunny
+                entity: sensor.xiaomi_miflora_illuminance
+                style:
+                  top: 15%
+                  left: 38%
+                  color: white
+              - type: state-label
+                entity: sensor.xiaomi_miflora_temperature
+                style:
+                  top: 15%
+                  left: 92%
+                  color: white
+                  --ha-label-badge-font-size: 1em
+          - type: entity-button
+            entity: switch.shenzhen_neo_electronics_co_ltd_wall_switch_1_channel_switch_3
+            name: GOŚCINNY
+            icon: mdi:lightbulb-on-outline
+            tap_action:
+              action: toggle
+  - title: Łazienka
+    background: var(--background-image)
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.bathroom_bme280_temperature
+            name: Temperatura
+            points_per_hour: 2
+            show:
+              labels: true
+            color_thresholds:
+              - value: 21
+                color: "#12bbf3"
+              - value: 23
+                color: "#00d304"
+              - value: 25
+                color: "#c0392b"
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                entities:
+                  - sensor.bathroom_bme280_humidity
+                name: Wilgotność
+                icon: mdi:weather-rainy
+                show:
+                  labels: true
+                line_color: blue
+                line_width: 8
+                font_size: 75
+                color_thresholds:
+                  - value: 35
+                    color: "#c0392b"
+                  - value: 50
+                    color: "#00d304"
+                  - value: 65
+                    color: "#c0392b"
+              - type: custom:mini-graph-card
+                entities:
+                  - sensor.bathroom_bme280_pressure
+                name: Ćiśnienie
+                icon: mdi:gauge
+                show:
+                  labels: true
+                line_color: orange
+                line_width: 8
+                font_size: 75
+          - type: entity-button
+            entity: switch.shenzhen_neo_electronics_co_ltd_wall_switch_1_channel_switch_4
+            name: ŁAZIENKA
+            icon: mdi:lightbulb-on-outline
+            tap_action:
+              action: toggle
+  - title: Service
+    background: var(--background-image)
+    icon: mdi:settings
+    cards:
+      - type: entities
+        show_header_toggle: false
+        title: Battery
+        entities:
+          - sensor.sm_g930f_battery_level
+          - sensor.redmi_note_4_battery_level
+          - sensor.danfoss_devolo_home_control_radiator_thermostat_battery_level
+          - sensor.fibaro_system_fgms001_zw5_motion_sensor_battery_level
+          - sensor.xiaomi_miflora_battery_level
+          - sensor.bedroom_sensor_battery_level
+          - sensor.living_room_sensor_battery_level
+          - sensor.sypialnia_window_sensor_battery
+      - type: entities
+        title: Diagnostic
+        show_header_toggle: false
+        entities:
+          - binary_sensor.internet_status
+          - sensor.myip
+          - sensor.disk_use_percent_home
+          - sensor.memory_free
+          - sensor.processor_use
+          - sensor.last_boot
+          - sensor.network_in_eth0
+          - sensor.network_out_eth0
+      - type: entities
+        entities:
+          - entity: input_boolean.zigbee_permit_join
+          - entity: timer.zigbee_permit_join
+          - entity: sensor.bridge_state
+        show_header_toggle: false
+        title: Zigbee
+

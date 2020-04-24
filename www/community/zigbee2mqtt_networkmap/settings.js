@@ -1,0 +1,2 @@
+var webhook_trigger_update_url = 'https://homeassistant-srokak.duckdns.org:8123/api/webhook/843942bee980e31816c3b52e99dca417228afb096a81e2e4dd183fd1233db1c3';
+var webhook_check_update_url = 'https://homeassistant-srokak.duckdns.org:8123/api/webhook/854a3a7cda553e8ebf765340028d70335f0eb5a25ffdf35c85ee4a50b4fb7601';

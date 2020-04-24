@@ -1,0 +1,37 @@
+esphome:
+  name: lazienka
+  platform: ESP8266
+  board: esp_wroom_02
+
+wifi:
+  ssid: "FRITZ!Box_7430_MX"
+  password: "grzesieks15261526"
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: "klucze1526"
+
+ota:
+  password: "klucze1526"
+
+i2c:
+  sda: 4
+  scl: 5
+  scan: True
+  
+sensor:
+  - platform: bme280
+    temperature:
+      name: "bathroom_bme280_temperature"
+      id: bathroom_bme280_temperature
+    pressure:
+      name: "bathroom_bme280_pressure"
+      id: bathroom_bme280_pressure
+    humidity:
+      name: "bathroom_bme280_humidity"
+      id: bathroom_bme280_humidity
+    address: 0x76
+    update_interval: 60s

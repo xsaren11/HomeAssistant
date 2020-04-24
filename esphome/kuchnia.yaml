@@ -1,0 +1,68 @@
+esphome:
+  name: kuchnia
+  platform: ESP8266
+  board: esp01_1m
+
+wifi:
+  ssid: "FRITZ!Box_7430_MX"
+  password: "grzesieks15261526"
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: "klucze1526"
+
+ota:
+
+i2c:
+  sda: GPIO1
+  scl: GPIO3
+  scan: True
+  
+binary_sensor:
+- platform: gpio
+  pin:
+    number: GPIO0
+    mode: INPUT_PULLUP
+    inverted: True
+  name: "Sonoff S20 Button"
+  on_press:
+    - switch.toggle: relay
+    - light.toggle: green_led
+- platform: status
+  name: "Sonoff S20 Status"
+
+
+switch:
+- platform: gpio
+  name: "Sonoff S20 Relay"
+  pin: GPIO12
+  id: relay
+
+output:
+- platform: esp8266_pwm
+  id: s20_green_led
+  pin: GPIO13
+  inverted: True
+
+light:
+- platform: monochromatic
+  name: "Sonoff S20 Green LED"
+  output: s20_green_led
+  id: green_led
+  
+sensor:
+  - platform: bme280
+    temperature:
+      name: "kitchen_bme280_temperature"
+      id: kitchen_bme280_temperature
+    pressure:
+      name: "kitchen_bme280_pressure"
+      id: kitchen_bme280_pressure
+    humidity:
+      name: "kitchen_bme280_humidity"
+      id: kitchen_bme280_humidity
+    address: 0x76
+    update_interval: 60s

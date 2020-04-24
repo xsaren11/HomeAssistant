@@ -1,0 +1,7 @@
+- name: krzysiek
+  platform: telegram
+  chat_id: !secret xiaomi
+
+- name: aga
+  platform: telegram
+  chat_id: !secret galaxy

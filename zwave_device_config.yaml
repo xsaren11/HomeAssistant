@@ -1,0 +1,12 @@
+switch.shenzhen_neo_electronics_co_ltd_wall_switch_1_channel_switch:
+  ignored: false
+  polling_intensity: 5
+switch.shenzhen_neo_electronics_co_ltd_wall_switch_1_channel_switch_2:
+  ignored: false
+  polling_intensity: 5
+switch.shenzhen_neo_electronics_co_ltd_wall_switch_1_channel_switch_3:
+  ignored: false
+  polling_intensity: 5
+switch.shenzhen_neo_electronics_co_ltd_wall_switch_1_channel_switch_4:
+  ignored: false
+  polling_intensity: 5

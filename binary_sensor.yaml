@@ -1,0 +1,4 @@
+- platform: ping
+  name: Internet Status
+  host: www.google.com
+  scan_interval: 5

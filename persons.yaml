@@ -1,0 +1,11 @@
+- name: Krzysiek
+  id: srokak
+  device_trackers:
+    - device_tracker.sm_g930f
+    - device_tracker.samsung_galaxy_s7
+
+- name: Aga
+  id: srokaa
+  device_trackers:
+    - device_tracker.redmi_note_4
+    - device_tracker.redminote4_agutek

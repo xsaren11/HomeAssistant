@@ -1,0 +1,11 @@
+- name: Home
+  latitude: 50.416560
+  longitude: 7.445830
+  radius: 250
+  icon: mdi:home
+  
+- name: Work
+  latitude: 50.385196
+  longitude: 7.581407
+  radius: 250
+  icon: mdi:briefcase

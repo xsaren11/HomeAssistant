@@ -1,0 +1,69 @@
+- platform: dnsip
+  
+- platform: mqtt
+  name: "Fan Temperature"
+  state_topic: "tele/fan/SENSOR"
+  value_template: "{{ value_json.BME280.Temperature }}"
+  unit_of_measurement: "°C"
+
+- platform: mqtt
+  name: "Fan Humidity"
+  state_topic: "tele/fan/SENSOR"
+  value_template: "{{ value_json.BME280.Humidity }}"
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: "Fan Preasure"
+  state_topic: "tele/fan/SENSOR"
+  value_template: "{{ value_json.BME280.Pressure }}"
+  unit_of_measurement: "hPa"
+  
+- platform: mqtt
+  state_topic: "owntracks/srokak/S7"
+  name: "Galaxy S7"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.batt }}'
+  device_class: battery
+
+- platform: mqtt
+  state_topic: "owntracks/srokaa/Redmi4"
+  name: "Redmi 4"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.batt }}'
+  device_class: battery
+
+- platform: alpha_vantage
+  api_key: !secret alpha_vantage
+  foreign_exchange:
+    - name: EUR
+      from: EUR
+      to: PLN
+
+- platform: waze_travel_time
+  name: "To work"
+  origin: device_tracker.srokak_s7
+  destination: "Züchnerstraße 8, Koblenz, Germany"
+  region: 'EU'
+
+- platform: waze_travel_time
+  name: "To home"
+  origin: device_tracker.srokak_s7
+  destination: "Stierweg 36, Weißenthurm, Germany"
+  region: 'EU'
+
+- platform: mqtt
+  name: Bridge state
+  state_topic: "zigbee2mqtt/bridge/state"
+  icon: mdi:router-wireless
+
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /home
+    - type: memory_free
+    - type: processor_use
+    - type: last_boot
+    - type: network_in
+      arg: eth0
+    - type: network_out
+      arg: eth0
